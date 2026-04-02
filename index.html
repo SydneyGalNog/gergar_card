@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrenador Legendario</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- 🌧️ FONDO -->
+<div id="rainContainer"></div>
+
+<!-- 🎮 INTRO -->
+<section id="intro" class="screen active">
+  <h1 class="glitch">POKÉMON SYSTEM</h1>
+  <p>Cargando entrenador...</p>
+</section>
+
+<!-- 🎮 START -->
+<section id="startScreen" class="screen">
+  <h1>🎮 Un entrenador legendario aparece...</h1>
+  <button onclick="goToPassword()">Iniciar aventura</button>
+</section>
+
+<!-- 🔐 PASSWORD -->
+<section id="passwordScreen" class="screen">
+  <div class="card">
+    <h2>🔐 Acceso restringido</h2>
+    <input type="password" id="password" placeholder="Clave secreta">
+    <button onclick="checkPassword()">Desbloquear</button>
+  </div>
+</section>
+
+<!-- 💌 CARTA -->
+<section id="letterSection" class="screen">
+  <div class="main-container">
+    <div class="card">
+
+      <div class="envelope" onclick="openLetter()">
+        <div class="flap"></div>
+        <div class="letter">
+          <h2>🎉 NIVEL 33</h2>
+          <p>
+            Has subido de nivel, entrenador.<br><br>
+            Tu historia no es común... es legendaria ✨💜
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ⭐ CONTENIDO FINAL -->
+<section id="finalContent" class="screen">
+  <div class="main-container">
+    <div class="card">
+
+      <img src="assets/gengar.gif" class="pikachu">
+
+      <h2>👻😈 Gengar eligió celebrarte</h2>
+
+      <h3>⏳ Tiempo siendo leyenda:</h3>
+      <p id="counter"></p>
+
+      <button onclick="finalSurprise()">🎁 RECLAMAR RECOMPENSA</button>
+
+    </div>
+  </div>
+</section>
+
+<!-- ⚔️ BATALLA FINAL -->
+<section id="battleScreen" class="screen">
+  <div class="battle-container">
+
+    <!-- ENEMIGO -->
+    <div class="enemy">
+      <h3>🎂 Cumpleaños Nivel 33</h3>
+      <div class="hp-bar">
+        <div id="enemyHP"></div>
+      </div>
+    </div>
+
+    <!-- PIKACHU -->
+    <img src="assets/gengar_ataque.gif" id="pikachuBattle">
+
+    <!-- JUGADOR -->
+    <div class="player">
+      <h3>(◣👅◢) Entrenador Legendario & Genaro</h3>
+      <div class="hp-bar">
+        <div id="playerHP"></div>
+      </div>
+    </div>
+
+    <!-- ACCIONES -->
+    <div class="actions">
+      <button onclick="attack()">👻😈 Atacar</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- 🧠 HISTORIA / DIÁLOGO -->
+<section id="storyScreen" class="screen">
+  <div class="dialog-box">
+    <p id="dialogText"></p>
+    <button onclick="nextDialog()">Continuar</button>
+  </div>
+</section>
+
+<!-- CARRUSEL -->
+<section id="carruselScreen" class="screen">
+  <h4 id="letrero">Feliz cumpleaños 👻</h4>
+  <div class="gengar-carousel-container">
+        <div class="gengar-carousel-track" id="carouselTrack">
+            <div class="gengar-carousel-item active"><img src="assets/jesus_gengar.jpg" alt="Foto Gengar 1"></div>
+            <div class="gengar-carousel-item"><img src="assets/hermanos_gengar.jpg" alt="Foto Gengar 2"></div>
+            <div class="gengar-carousel-item"><img src="assets/hbd.jpg" alt="Foto Gengar 3"></div>
+            <div class="gengar-carousel-item"><img src="assets/hermanos.jpg" alt="Foto Gengar 3"></div>
+            <div class="gengar-carousel-item"><img src="assets/hermanos2.jpg" alt="Foto Gengar 3"></div>
+            <div class="gengar-carousel-item"><img src="assets/hermanos3.jpg" alt="Foto Gengar 3"></div>
+        </div>
+    </div>
+    <button onclick="location.reload()">VOLVER AL INICIO 👻</button>
+</section>
+
+<!-- victoria-->
+ <section id="victoria-screen" class="screen">
+<div class="victory-screen">
+      🎉 VICTORIA LEGENDARIA 🎉
+      <p>Has derrotado al cumpleaños</p>
+      <p>Ahora comienza el siguiente nivel en tu vida</p>
+      <p>FELIZ CUMPLEAÑOS HERMANO, TE QUIERO MUCHO</p>
+      <button onclick="location.reload()">VOLVER AL INICIO 👻</button>
+      <button onclick="showCarrusel()">Carrusel👻</button>
+    </div>
+ </section>
+<script src="script.js"></script>
+</body>
+</html>

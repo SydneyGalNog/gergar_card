@@ -1,0 +1,311 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: black;
+  color: white;
+  overflow: hidden;
+}
+
+h4 {
+            text-align: center;
+            color: #7B528C; /* Morado Gengar */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(123, 82, 140, 0.8);
+            margin-bottom: 20px;
+        }
+
+/* SCREENS */
+.screen {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.screen.active {
+  display: flex;
+}
+
+/* CONTENEDOR */
+.main-container {
+  z-index: 2;
+}
+
+/* CARD */
+.card {
+  background: rgba(45, 13, 66, 0.9);/* rgba(255,255,255,0.95);*/
+  color: #f0f0f0;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 0 30px rgba(123, 82, 140, 0.8), 0 0 10px rgba(225, 0, 0, 0.3);/* 0 0 30px rgba(255,255,0,0.5);*/
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  /* Gengar es juguetón, que flote un poco al pasar el mouse */
+  transform: translateY(-5px);
+  box-shadow: 0 0 40px rgba(163, 102, 200, 0.9);
+}
+
+/* BOTONES */
+button {
+  padding: 15px;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #4A2E5D 0%, #7B528C 100%);
+  box-shadow: 0 4px 15px rgba(225, 0, 0, 0.5);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #E10000;
+  transition: all 0.3s ease;
+}
+button:hover {
+  /* Efecto de 'intensidad' al pasar el mouse */
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(225, 0, 0, 0.8);
+}
+
+/* INPUT */
+input {
+  padding: 10px;
+  margin-top: 10px;
+  width: 80%;
+}
+
+/* INTRO */
+.glitch {
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px red; }
+  50% { text-shadow: -2px -2px blue; }
+  100% { text-shadow: 2px 2px red; }
+}
+
+/* CARTA */
+.envelope {
+  width: 250px;
+  height: 150px;
+  margin: auto;
+  position: relative;
+  cursor: pointer;
+}
+
+.flap {
+  background: red;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 1s;
+}
+
+.letter {
+  background: white;
+  color: black;
+  padding: 20px;
+  transform: scale(0);
+  transition: 1s;
+}
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .letter {
+  transform: scale(1);
+}
+
+/* PIKACHU */
+.pikachu {
+  width: 150px;
+  margin: 20px auto;
+}
+
+/* LLUVIA */
+#rainContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.rain-img {
+  position: absolute;
+  width: 60px;
+  opacity: 0.7;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .card {
+    padding: 20px;
+  }
+}
+/* BATALLA */
+.battle-container {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.enemy, .player {
+  margin: 20px 0;
+}
+
+/* BARRA DE VIDA */
+.hp-bar {
+  width: 100%;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#enemyHP, #playerHP {
+  height: 100%;
+  background: limegreen;
+  width: 100%;
+  transition: width 0.5s;
+}
+
+/* PIKACHU */
+#pikachuBattle {
+  width: 120px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* ACCIONES */
+.actions button {
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #4A2E5D 0%, #7B528C 100%);
+  border-radius: 10px;
+}
+/* DIÁLOGO */
+.dialog-box {
+  position: absolute;
+  bottom: 20px;
+  width: 90%;
+  max-width: 500px;
+
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  border: 4px solid black;
+
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  line-height: 1.5; /* 👈 clave */
+}
+
+#dialogText {
+  min-height: 80px;
+  white-space: pre-wrap; /* 👈 MUY IMPORTANTE */
+}
+#dialogText::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* VICTORIA */
+.victory-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: black;
+  color: yellow;
+  font-size: 30px;
+  animation: fadeIn 1s ease;
+}
+
+/*carrusel*/
+.gengar-carousel-container {
+            width: 100%;
+            max-width: 1000px; /* Ajusta el ancho máximo deseado */
+            position: relative;
+            overflow: hidden; /* Oculta lo que sale del contenedor */
+            padding: 20px 0;
+            background: linear-gradient(180deg, rgba(45, 13, 66, 0.2) 0%, rgba(0, 0, 0, 0) 100%); /* Sutil gradiente morado */
+        }
+
+        /* --- LA FILA SCROLLABLE DE IMÁGENES --- */
+        .gengar-carousel-track {
+            display: flex;
+            overflow-x: scroll; /* Permite scroll horizontal */
+            scroll-snap-type: x mandatory; /* Activa el "imán" para que los elementos encajen */
+            scroll-behavior: smooth; /* Desplazamiento suave */
+            -ms-overflow-style: none; /* Oculta barra de scroll en IE/Edge */
+            scrollbar-width: none; /* Oculta barra de scroll en Firefox */
+        }
+
+        /* Oculta barra de scroll en Chrome/Safari */
+        .gengar-carousel-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* --- CADA ELEMENTO DEL CARRUSEL --- */
+        .gengar-carousel-item {
+            flex: 0 0 100%; /* Por defecto ocupa el 100% de ancho (móvil) */
+            scroll-snap-align: center; /* Se alinea al centro cuando el scroll para */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0.5; /* Atenuado por defecto */
+        }
+
+        /* --- ESTILO RESPONSIVO PARA MÁS DE UNA IMAGEN --- */
+        @media (min-width: 768px) {
+            .gengar-carousel-item {
+                flex: 0 0 33.333%; /* Tres imágenes por fila */
+            }
+        }
+
+        /* --- LA IMAGEN EN SÍ --- */
+        .gengar-carousel-item img {
+            max-width: 90%; /* Pequeño espacio entre imágenes */
+            height: auto;
+            border-radius: 10px;
+            /* Sombra inspirada en los ojos rojos de Gengar */
+            box-shadow: 0 4px 15px rgba(225, 0, 0, 0.2); 
+            border: 1px solid rgba(123, 82, 140, 0.3); /* Borde sutil morado */
+        }
+
+        /* --- EFECTO RESALTADO AL CENTRO --- */
+        /* Usamos JavaScript para añadir una clase .active a la imagen central */
+        .gengar-carousel-item.active {
+            opacity: 1; /* Completamente visible */
+            transform: scale(1.05); /* Ligeramente más grande */
+            box-shadow: 0 0 30px rgba(123, 82, 140, 0.8), 0 0 10px rgba(225, 0, 0, 0.4);
+        }
+
