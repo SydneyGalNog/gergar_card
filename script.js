@@ -12,8 +12,8 @@ const dialogos = [
   "Hoy ha llegado a un nuevo nivel...",
   "Un nivel que sera mejor... donde debe seguir entrenando...",
   "El entrenador no estara solo... tiene a su gente que lo respaldara siempre...",
-  "El entrenador es muy amado por toda su pokefamilia..."
-  "Enhorabuena..."
+  "El entrenador es muy amado por toda su pokefamilia...",
+  "Enhorabuena...",
   "👻😈 ¡Nivel 33 desbloqueado!",
   "Pero aún queda una última batalla..."
 ];
