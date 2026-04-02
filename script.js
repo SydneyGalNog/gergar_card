@@ -7,10 +7,13 @@ const dialogos = [
   "Hace 33 años... nació un entrenador diferente...",
   "No era común... tenía algo especial...",
   "Superó retos... evolucionó y nunca se rindió...",
-  "Sigue luchando por sus sueños...",
+  "Sigue evolucionando... y luchando por sus sueños...",
+  "Hace 33 años... la edad de jesucristo ajajajja...",
   "Hoy ha llegado a un nuevo nivel...",
-  "Un nivel que sera mejor... que pinta para cosas buenas...",
+  "Un nivel que sera mejor... donde debe seguir entrenando...",
   "El entrenador no estara solo... tiene a su gente que lo respaldara siempre...",
+  "El entrenador es muy amado por toda su pokefamilia..."
+  "Enhorabuena..."
   "👻😈 ¡Nivel 33 desbloqueado!",
   "Pero aún queda una última batalla..."
 ];
@@ -217,18 +220,6 @@ function showBattleText(texto) {
   setTimeout(() => div.remove(), 2000);
 }
 function showVictory() {
-  /* 
-  document.body.innerHTML = `
-    <div class="victory-screen">
-      🎉 VICTORIA LEGENDARIA 🎉
-      <p>Has derrotado al cumpleaños</p>
-      <p>Ahora comienza el siguiente nivel en tu vida</p>
-      <p>FELIZ CUMPLEAÑOS HERMANO, TE QUIERO MUCHO</p>
-      <button onclick="location.reload()">VOLVER AL INICIO 👻</button>
-      <button onclick="showCarrusel()">Carrusel👻</button>
-    </div>
-  `;
- */
  changeScreen("victoria-screen");
   
 }
@@ -258,7 +249,7 @@ function startAutoPlay() {
         // Calculamos cuánto mide una tarjeta para mover exactamente esa distancia
         const itemWidth = track.querySelector('.gengar-carousel-item').offsetWidth;
         track.scrollBy({ left: itemWidth, behavior: 'smooth' });
-    }, 3000); // 3000ms = 3 segundos por foto
+    }, 2000); // 3000ms = 3 segundos por foto
 }
 
 // 3. DETENER AL TOCAR (Opcional: para que el usuario pueda ver una foto tranquilo)
